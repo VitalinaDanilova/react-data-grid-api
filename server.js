@@ -17,14 +17,14 @@ app.use(morgan('combined'));
 
 const db = require('knex')({
   client: 'pg',
+  version: 13.2,
   connection: {
     host: 'localhost',
-    user: '',
-    password: '',
+    user: 'postgres',
+    password: 'inspiron15',
     database: 'react-data-grid',
     port: 5432,
   },
-  pool: { min: 2, max: 10 },
 });
 
 app.set('db', db);
