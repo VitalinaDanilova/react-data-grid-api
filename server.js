@@ -31,14 +31,6 @@ app.set('db', db);
 
 app.use('/', main);
 
-/*
-app.get('/', (req, res) => res.send("It's alive!"));
-app.get('/items', (req, res) => main.getTableData(req, res, db));
-app.post('/items', (req, res) => main.postTableData(req, res, db));
-app.put('/items/:id', (req, res) => main.putTableData(req, res, db));
-app.delete('/items/:id', (req, res) => main.deleteTableData(req, res, db));
-*/
-
 app.listen(process.env.PORT || 9000, () => {
   console.log(`Node server is running on port ${process.env.PORT || 9000}`);
 });

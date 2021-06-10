@@ -51,7 +51,9 @@ router
     const db = req.app.get('db');
     DataService.insertData(db, req.body).then((data) => {
       res.json(data);
-    });
+      res.end();
+    })
+    .catch((e) => console.log(e));
   })
   .put(function (req, res) {
     const db = req.app.get('db');
@@ -71,12 +73,6 @@ router
   .get(function (req, res, next) {
     const db = req.app.get('db');
     DataService.getDataById(db, req.params.id).then((data) => {
-      res.json(data);
-    });
-  })
-  .put(function (req, res) {
-    const db = req.app.get('db');
-    DataService.updateData(db, req.params.id, req.body).then((data) => {
       res.json(data);
     });
   })
